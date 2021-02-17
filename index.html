@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      //  Создайте страницу с произвольным количеством изображений.
+//Создайте сценарий, который выведет адреса всех изображений, которые загруженные на страницу, после
+//чего с интервалом в одну секунду по очереди каждому изображению добавит красную рамку
+window.onload=function(){
+let img1=document.getElementById("img1").getAttribute('src');;
+
+let imeg=document.querySelectorAll("img");
+
+for(i=0;i<imeg.length;i++){
+    let container=document.getElementById("cont");
+    let elem=document.createElement("p");
+ 
+
+container.appendChild(elem).innerHTML=i+") "+imeg[i].getAttribute("src")+"<br/>";
+console.log(imeg);
+}
+
+setTimeout(function() {imeg[0].style.border="3px solid red"}, 1000);
+setTimeout(function() {imeg[1].style.border="3px solid red"}, 2000);
+setTimeout(function() {imeg[2].style.border="3px solid red"}, 3000);
+setTimeout(function() {imeg[3].style.border="3px solid red"}, 5000);
+setTimeout(function() {imeg[4].style.border="3px solid red"}, 6000);
+
+console.log(imeg);
+console.log(img1);}
+    </script>
+</head>
+<body>
+    <img id="img1" style="width:200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/MilfordSound.jpg/600px-MilfordSound.jpg"><br/>
+
+    <img id="img2" style="width:200px" src=  "https://www.templatemonster.com/ru/faq/wp-content/uploads/2017/10/1-1.jpg"><br/>
+    <img id="img3" style="width:200px" src=  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3y7er9sgT6uA1s0385XbjoboWfb8kjqvfew&usqp=CAU"><br/>
+    <img id="img4" style="width:200px" src="https://bipbap.ru/wp-content/uploads/2017/08/LEpwl8j7fQ.jpg"><br/>
+    <img id="img5" style="width:200px" src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxI2dX4kDP32oR3t2vsfgju8pgtSHj9pxFLw&usqp=CAU"><br/>
+    <div id="cont"></div>
+</body>
+</html>
